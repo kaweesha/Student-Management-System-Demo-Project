@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface StudentDAO {
 
-    public List<Student> getStudents();
+    List<Student> getStudents();
 
-    public Student getStudent(int studentId);
+    Student getStudent(int studentId);
 
-    public void saveStudent(Student theStudent);
+    void saveStudent(Student theStudent);
 
-    public void deleteStudent(int studentId);
+    void deleteStudent(int studentId);
 
 
 

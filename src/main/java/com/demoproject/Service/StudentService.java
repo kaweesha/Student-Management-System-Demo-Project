@@ -8,9 +8,9 @@ public interface StudentService {
 
     List<Student> getStudents();
 
-    public void saveStudent(Student theStudent);
+    void saveStudent(Student theStudent);
 
-    public Student getStudent(int studentId);
+    Student getStudent(int studentId);
 
-    public void deleteStudent(int studentId);
+    void deleteStudent(int studentId);
 }
