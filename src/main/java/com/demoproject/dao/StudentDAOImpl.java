@@ -16,13 +16,16 @@ public class StudentDAOImpl implements StudentDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Student> getStudents() {
+    public List<Student> getStudents(String className) {
 
         // get the current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
         // create query
-        Query<Student> theQuery = currentSession.createQuery("from Student", Student.class);
+        Query<Student> theQuery = currentSession.createQuery("FROM Student S WHERE S.className = :className", Student.class);
+        theQuery.setParameter("className",className);
+
+//        Query<Student> theQuery = currentSession.createQuery("from Student", Student.class);
 
         // execute the query and get the result list
         List<Student> students = theQuery.getResultList();

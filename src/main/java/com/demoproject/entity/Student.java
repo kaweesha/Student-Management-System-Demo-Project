@@ -20,6 +20,9 @@ public class Student {
     @Column(name="email_address")
     private String emailAddress;
 
+    @Column(name="class_name")
+    private String className;
+
     public Student() {
 
     }
@@ -56,6 +59,14 @@ public class Student {
         this.emailAddress = emailAddress;
     }
 
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -63,6 +74,7 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
+                ", className='" + className + '\'' +
                 '}';
     }
 }

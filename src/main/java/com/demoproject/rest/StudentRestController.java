@@ -15,13 +15,20 @@ public class StudentRestController {
     private StudentService studentService;
 
     // add mapping for get /students
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/students")
-    public List<Student> getStudents() {
-
-        return studentService.getStudents();
+    public List<Student> getStudents(@RequestParam(value="className") String className) {
+        return studentService.getStudents(className);
     }
+//    // add mapping for get /students
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    @GetMapping("/students")
+//    public List<Student> getStudents() {
+//        return studentService.getStudents();
+//    }
 
     // add mapping to get a single student "/students/{studentId}"
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/students/{studentId}")
     public Student getStudent(@PathVariable int studentId) {
 
@@ -35,6 +42,7 @@ public class StudentRestController {
     }
 
     // save a student
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/students")
     public Student addStudent(@RequestBody Student theStudent) {
 
@@ -47,6 +55,7 @@ public class StudentRestController {
     }
 
     // update a student
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/students")
     public Student updateStudent(@RequestBody Student theStudent) {
 
@@ -56,6 +65,7 @@ public class StudentRestController {
     }
 
     // delete a student
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/students/{studentId}")
     public String deleteStudent(@PathVariable int studentId) {
 
