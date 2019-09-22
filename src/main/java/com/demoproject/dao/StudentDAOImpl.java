@@ -4,7 +4,6 @@ import com.demoproject.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 @Repository
 public class StudentDAOImpl implements StudentDAO {
 
-    @Autowired
+//    @Autowired
     private SessionFactory sessionFactory;
+
+    public StudentDAOImpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public List<Student> getStudents(String className) {

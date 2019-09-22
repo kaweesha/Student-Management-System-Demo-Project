@@ -27,8 +27,12 @@ import java.util.logging.Logger;
 public class AppConfig {
 
     // set up a variable to hold the properties
-    @Autowired
+//    @Autowired
     private Environment env;
+
+    public AppConfig(Environment env) {
+        this.env = env;
+    }
 
     // logger
     private Logger logger = Logger.getLogger(getClass().getName());

@@ -3,17 +3,20 @@ package com.demoproject.rest;
 
 import com.demoproject.Service.TeacherService;
 import com.demoproject.entity.Teacher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping(value = "/api")
 public class TeacherRestController {
 
-    @Autowired
+//    @Autowired
     private TeacherService teacherService;
+
+    public TeacherRestController(TeacherService teacherService) {
+        this.teacherService = teacherService;
+    }
 
     // add mapping for get /teachers
     @CrossOrigin(origins = "http://localhost:4200")

@@ -2,7 +2,6 @@ package com.demoproject.Service;
 
 import com.demoproject.dao.TeacherDAO;
 import com.demoproject.entity.Teacher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +10,11 @@ import java.util.List;
 @Service
 public class TeacherServiceImpl implements TeacherService{
 
-    @Autowired
     private TeacherDAO teacherDAO;
 
+    public TeacherServiceImpl(TeacherDAO teacherDAO) {
+        this.teacherDAO = teacherDAO;
+    }
 
     @Override
     @Transactional
